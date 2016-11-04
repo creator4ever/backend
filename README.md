@@ -3,4 +3,4 @@
 
 This fork repository have purpose to catch "database exception".
 
-Caution : Use only for development, But production.
+Caution : Use only for development, Do not use for production.
