@@ -67,10 +67,16 @@ class BackendController extends ControllerBase
         /*
          * Database check
          */
-        if (!App::hasDatabase()) {
-            return Config::get('app.debug', false)
+        try {
+            $hasDatabase = app('db.connection')->getDatabaseName();
+            if (!$hasDatabase) {
+            // if (!App::hasDatabase()) {
+                return Config::get('app.debug', false)
                 ? Response::make(View::make('backend::no_database'), 200)
                 : App::make('Cms\Classes\Controller')->run($url);
+            }
+        } catch (Exception $e) {
+            throw $e;
         }
 
         /*
