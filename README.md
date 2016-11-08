@@ -10,7 +10,7 @@ Replaced newest ACE editor v1.2.5-dev for multibyte.
   {
     "type": "vcs",
     "url": "https://github.com/creator4ever/backend"
-  },
+  }
 ],
 "require": {
    ...
